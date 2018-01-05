@@ -44,4 +44,9 @@ for text in texts:
 for call in callList:
     if call not in calledList and call not in textList and call not in textedList:
         callSet.add(call)
-print("These numbers could be telemarketers: {}".format(callSet))
+
+callList = list(callSet)
+callList.sort()
+print("These numbers could be telemarketers:")
+for l in callList:
+    print("{}".format(l))

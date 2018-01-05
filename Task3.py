@@ -53,9 +53,14 @@ for number in calls:
             phoneCode = number[1][:index]
             finalArray.add(phoneCode)
         else:
-            tleCode = number[1].split(" ")[0]
+            tleCode = number[1][0:4]
             finalArray.add(tleCode)
-print("The numbers called by people in Bangalore have codes:{}".format(finalArray))
+
+result = list(finalArray)
+result.sort()
+print("The numbers called by people in Bangalore have codes:")
+for num in result:
+    print("{}".format(num))
 
 for number in banArray:
     if "(080)" in number[1]:
